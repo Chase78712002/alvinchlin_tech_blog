@@ -1,24 +1,27 @@
 # README
 
+<!--toc:start-->
+
+- [README](#readme)
+  - [To Run this](#to-run-this)
+  - [Current Status](#current-status)
+  <!--toc:end-->
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+## To Run this
 
-* Ruby version
+1. Clone to your local directory:
 
-* System dependencies
+```bash
+git clone https://github.com/Chase78712002/alvinchlin_tech_blog.git
+```
 
-* Configuration
+2. Go into the project directory and run `bin/dev`
+3. Go to your local host port, usually port 3000
+   - [Local Host](http://127.0.0.1:3000)
 
-* Database creation
+## Current Status
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+-[x] Simple home page done.
