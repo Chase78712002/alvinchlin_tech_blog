@@ -24,4 +24,5 @@ git clone https://github.com/Chase78712002/alvinchlin_tech_blog.git
 
 ## Current Status
 
--[x] Simple home page done.
+- [x] Simple home page done.
+- [x] Posts scaffold working.
