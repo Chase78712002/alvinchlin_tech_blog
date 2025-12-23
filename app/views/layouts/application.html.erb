@@ -23,7 +23,11 @@
   </head>
 
   <body>
-    <main class="bg-gray-900 text-green-500 w-screen h-screen px-5 flex">
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: name %>
+    <% end %>
+    <main class="bg-gray-900 text-green-500 w-screen h-screen p-5 flex">
+
       <%= yield %>
     </main>
   </body>
