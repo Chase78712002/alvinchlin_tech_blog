@@ -5,6 +5,8 @@
   </div>
   <div>
     <strong class="block font-medium mb-1">Body:</strong>
-    <%= post.body %>
+    <div class="prose">
+      <%= render_markdown(post.body) %>
+    </div>
   </div>
 </div>
