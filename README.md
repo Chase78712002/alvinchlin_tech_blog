@@ -27,4 +27,4 @@ git clone https://github.com/Chase78712002/alvinchlin_tech_blog.git
 - [x] Simple home page done.
 - [x] Posts scaffold working.
 - [x] Posts validations and flash messages working.
-- [ ] Render post body as Markdown working.
+- [x] Render post body as Markdown working.
