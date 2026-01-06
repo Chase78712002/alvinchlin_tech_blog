@@ -1,0 +1,15 @@
+<aside
+  class="
+    w-64 flex flex-col bg-gray-900 shrink-0 border-r border-white/10 px-4 py-6
+  "
+>
+  <div class="text-green-500 flex items-center space-x-1">
+    <div class="h-10 w-10 rounded-xl bg-white/10"></div>
+    <strong>Alvin C.H.L Tech Blog</strong>
+  </div>
+  <nav class="flex flex-col space-y-1">
+    <%= render "shared/nav_link", text: "Home", path: root_path %>
+    <%= render "shared/nav_link", text: "Posts", path: posts_path %>
+    <%# Later options %>
+  </nav>
+</aside>

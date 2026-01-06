@@ -2,6 +2,20 @@
   <h1 class="font-bold text-4xl text-center my-2">Alvin C.H. Lin</h1>
   <h3 class="my-2">A personal tech blog documenting my journey building real things</h3>
   <div>
-    Posts are listed here...
+    <% @latest_posts.each do |post| %>
+      <div class="flex flex-col m-2 p-2 mr-4">
+        <h5>
+          <%= link_to post do %>
+            <h5><%= post.title %></h5>
+            <p>Date:
+              <%= post.created_at %>
+            </p>
+          <% end %>
+        </h5>
+      </div>
+    <% end %>
+  </div>
+  <div>
+    <%= link_to "View all posts", posts_path %>
   </div>
 </div>
