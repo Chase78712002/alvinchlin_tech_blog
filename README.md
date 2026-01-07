@@ -30,7 +30,7 @@ git clone https://github.com/Chase78712002/alvinchlin_tech_blog.git
 - [x] Render post body as Markdown working.
 - [x] Side navigation bar working.
 - [x] Home page renders the latest posts.
-- [ ] Add active nav-link highlight in sidebar.
+- [x] Add active nav-link highlight in sidebar.
 - [ ] Increase Posts index scanability.
 - [ ] Deploy.
 - [ ] Drawer auto-open on edge hover.
