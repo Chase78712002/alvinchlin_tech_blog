@@ -7,9 +7,12 @@
     <div class="h-10 w-10 rounded-xl bg-white/10"></div>
     <strong>Alvin C.H.L Tech Blog</strong>
   </div>
-  <nav class="flex flex-col space-y-1">
-    <%= render "shared/nav_link", text: "Home", path: root_path %>
-    <%= render "shared/nav_link", text: "Posts", path: posts_path %>
+  <% home_active = current_page?(root_path) %>
+  <% posts_active = request.path.start_with?("/posts") %>
+
+  <nav class="flex flex-col space-y-1 m-4">
+    <%= render "shared/nav_link", text: "Home", path: root_path, active: home_active %>
+    <%= render "shared/nav_link", text: "Posts", path: posts_path, active: posts_active %>
     <%# Later options %>
   </nav>
 </aside>
