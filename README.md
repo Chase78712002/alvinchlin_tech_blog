@@ -31,6 +31,6 @@ git clone https://github.com/Chase78712002/alvinchlin_tech_blog.git
 - [x] Side navigation bar working.
 - [x] Home page renders the latest posts.
 - [x] Add active nav-link highlight in sidebar.
-- [ ] Increase Posts index scanability.
+- [x] Improve Posts index scanability.
 - [ ] Deploy.
 - [ ] Drawer auto-open on edge hover.
