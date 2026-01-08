@@ -8,7 +8,7 @@
           <%= link_to post do %>
             <h5><%= post.title %></h5>
             <p>Date:
-              <%= post.created_at %>
+              <%= post.created_at.to_date %>
             </p>
           <% end %>
         </h5>
