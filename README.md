@@ -33,4 +33,5 @@ git clone https://github.com/Chase78712002/alvinchlin_tech_blog.git
 - [x] Add active nav-link highlight in sidebar.
 - [x] Improve Posts index scanability.
 - [ ] Deploy.
+  - [] Run `bundle exec kamal setup`
 - [ ] Drawer auto-open on edge hover.
