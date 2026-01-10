@@ -32,6 +32,7 @@ git clone https://github.com/Chase78712002/alvinchlin_tech_blog.git
 - [x] Home page renders the latest posts.
 - [x] Add active nav-link highlight in sidebar.
 - [x] Improve Posts index scanability.
-- [ ] Deploy.
-  - [] Run `bundle exec kamal setup`
+- [x] Deploy.
+  - [x] Run `bundle exec kamal setup`
+- [] Debug compilation issue with production CSS
 - [ ] Drawer auto-open on edge hover.
