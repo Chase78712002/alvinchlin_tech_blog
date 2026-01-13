@@ -22,6 +22,10 @@ git clone https://github.com/Chase78712002/alvinchlin_tech_blog.git
 3. Go to your local host port, usually port 3000
    - [Local Host](http://127.0.0.1:3000)
 
+## Deployment Notes
+
+On Apple Silicon, uncheck "Use Rosetta for x86_64/amd64 emulation for Apple Silicon" option in Docker Desktop to avoid incorrect asset builds for amd64 images.
+
 ## Current Status
 
 - [x] Simple home page done.
@@ -34,5 +38,8 @@ git clone https://github.com/Chase78712002/alvinchlin_tech_blog.git
 - [x] Improve Posts index scanability.
 - [x] Deploy.
   - [x] Run `bundle exec kamal setup`
-- [] Debug compilation issue with production CSS
+- [x] Debug asset builds issue with production CSS
+- [x] Add basic authentication for admin user
+- [] Add Domain name + HTTPS
+
 - [ ] Drawer auto-open on edge hover.
