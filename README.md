@@ -40,6 +40,6 @@ On Apple Silicon, uncheck "Use Rosetta for x86_64/amd64 emulation for Apple Sili
   - [x] Run `bundle exec kamal setup`
 - [x] Debug asset builds issue with production CSS
 - [x] Add basic authentication for admin user
-- [] Add Domain name + HTTPS
-
+- [x] Add Domain name + HTTPS
+- [x] Ensure posts survive redeploys/restarts by persisting DB. - DB already persists by default with the new changes from Rails 8.
 - [ ] Drawer auto-open on edge hover.
