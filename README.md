@@ -42,4 +42,5 @@ On Apple Silicon, uncheck "Use Rosetta for x86_64/amd64 emulation for Apple Sili
 - [x] Add basic authentication for admin user
 - [x] Add Domain name + HTTPS
 - [x] Ensure posts survive redeploys/restarts by persisting DB. - DB already persists by default with the new changes from Rails 8.
+- [x] Improve post content UX minorly.
 - [ ] Drawer auto-open on edge hover.
