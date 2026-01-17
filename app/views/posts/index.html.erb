@@ -26,18 +26,7 @@
             flex flex-col sm:flex-row justify-between items-center pb-5 sm:pb-0
           "
         >
-          <div class="rounded-2xl border border-white/10 bg-white/5 bg-white/5 m-2 p-4">
-            <div class="flex items-baseline justify-between gap-4" id="post_title">
-              <%= link_to post.title,
-              post,
-              class:
-                "text-lg font-semibold text-slate-100 hover:text-emerald-500 hover:underline underline-offset-4" %>
-              <span class="text-xs text-slate-400"><%= post.created_at.to_date %></span>
-            </div>
-            <p class="text-sm text-slate-400" id="post_body">
-              <%= truncate(strip_tags(post.body.to_s), length: 140) %>
-            </p>
-          </div>
+          <%= render "list_item_container", post: post %>
           <div class="w-full sm:w-auto flex flex-col sm:flex-row space-x-2 space-y-2">
             <%= button_to "Destroy",
             post,
