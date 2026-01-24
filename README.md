@@ -44,4 +44,5 @@ On Apple Silicon, uncheck "Use Rosetta for x86_64/amd64 emulation for Apple Sili
 - [x] Ensure posts survive redeploys/restarts by persisting DB. - DB already persists by default with the new changes from Rails 8.
 - [x] Improve post content UX minorly.
 - [x] Increase textarea rows in edit mode.
-- [ ] Drawer auto-open on edge hover.
+- [x] Add Profile picture as logo and favicon icon.
+- [] Drawer auto-open on edge hover.
