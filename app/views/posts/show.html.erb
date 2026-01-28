@@ -13,22 +13,24 @@
   <%= render @post %>
 
   <div class="self-center">
-    <%= link_to "Edit this post",
-    edit_post_path(@post),
-    class:
-      "w-full sm:w-auto text-center rounded-md px-3.5 py-2.5 text-white bg-blue-500 hover:bg-blue-50 hover:text-black inline-block font-medium" %>
     <%= link_to "Back to posts",
     posts_path,
     class:
       "w-full sm:w-auto text-center mt-2 sm:mt-0 sm:ml-2 rounded-md px-3.5 py-2.5 text-white bg-blue-500 hover:bg-blue-50 hover:text-black inline-block font-medium" %>
-    <%= button_to "Destroy this post",
-    @post,
-    method: :delete,
-    form_class: "sm:inline-block mt-2 sm:mt-0 sm:ml-2",
+    <%= link_to "Edit this post",
+    edit_post_path(@post),
     class:
-      "w-full rounded-md px-3.5 py-2.5 text-white bg-red-600 hover:bg-red-500 font-medium cursor-pointer",
-    data: {
-      turbo_confirm: "Are you sure?",
-    } %>
+      "w-full sm:w-auto text-center rounded-md px-3.5 py-2.5 text-white bg-blue-500 hover:bg-blue-50 hover:text-black inline-block font-medium" %>
+    <% if admin_authenticated? %>
+      <%= button_to "Destroy this post",
+      @post,
+      method: :delete,
+      form_class: "sm:inline-block mt-2 sm:mt-0 sm:ml-2",
+      class:
+        "w-full rounded-md px-3.5 py-2.5 text-white bg-red-600 hover:bg-red-500 font-medium cursor-pointer",
+      data: {
+        turbo_confirm: "Are you sure?",
+      } %>
+    <% end %>
   </div>
 </div>
