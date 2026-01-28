@@ -45,4 +45,5 @@ On Apple Silicon, uncheck "Use Rosetta for x86_64/amd64 emulation for Apple Sili
 - [x] Improve post content UX minorly.
 - [x] Increase textarea rows in edit mode.
 - [x] Add Profile picture as logo and favicon icon.
+- [x] Add authentication check to hide the destroy buttons if admin not logged in.
 - [] Drawer auto-open on edge hover.
