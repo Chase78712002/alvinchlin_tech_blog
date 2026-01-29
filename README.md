@@ -47,5 +47,7 @@ On Apple Silicon, uncheck "Use Rosetta for x86_64/amd64 emulation for Apple Sili
 - [x] Add Profile picture as logo and favicon icon.
 - [x] Add authentication check to hide the destroy buttons if admin not logged in.
 - [x] Add authentication check to replace the "New" post button with "Log in" if admin is not logged in.
+- [x] Change post display date to updated_at date.
+- [x] Set index posts in descending order.
 - [] Add authentication check to hide the edit buttons if admin not logged in.
 - [] Drawer auto-open on edge hover.
