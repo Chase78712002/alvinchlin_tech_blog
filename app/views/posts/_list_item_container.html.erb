@@ -4,7 +4,7 @@
     post,
     class:
       "text-lg font-semibold text-slate-100 hover:text-emerald-500 hover:underline underline-offset-4" %>
-    <span class="text-xs text-slate-400"><%= post.created_at.to_date %></span>
+    <span class="text-xs text-slate-400"><%= post.updated_at.to_date %></span>
   </div>
   <p class="text-sm text-slate-400" id="post_body">
     <%= truncate(strip_tags(post.body.to_s), length: 140) %>
