@@ -12,7 +12,7 @@
 
   <div class="flex justify-between items-center">
     <h1 class="font-bold text-4xl">Posts</h1>
-    <%= link_to "New post",
+    <%= link_to admin_authenticated? ? "New post" : "Log In",
     new_post_path,
     class:
       "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white block font-medium" %>
