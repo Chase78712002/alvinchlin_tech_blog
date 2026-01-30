@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   private
 
   def require_admin!
-    # return unless Rails.env.production?
+    return unless Rails.env.production?
 
     authenticate_or_request_with_http_basic do |user, password|
       ActiveSupport::SecurityUtils.secure_compare(user, ENV.fetch("ADMIN_USER")) &
@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def admin_authenticated?
-    # return true unless Rails.env.production?
+    return true unless Rails.env.production?
 
     authenticate_with_http_basic do |user, password|
       ActiveSupport::SecurityUtils.secure_compare(user, ENV.fetch("ADMIN_USER")) &
