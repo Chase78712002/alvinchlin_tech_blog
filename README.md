@@ -51,3 +51,6 @@ On Apple Silicon, uncheck "Use Rosetta for x86_64/amd64 emulation for Apple Sili
 - [x] Set index posts in descending order.
 - [] Add authentication check to hide the edit buttons if admin not logged in.
 - [] Drawer auto-open on edge hover.
+  - [x] Auto open sidebar on edge hover, and auto-close it on mouse leave.
+  - [] add mobile toggle button + click-to-open;
+  - [] disable hover hotzone on touch.
