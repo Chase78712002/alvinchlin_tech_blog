@@ -28,7 +28,7 @@
 
   <body
     data-controller="sidebar"
-    data-action="mousemove@window->sidebar#mouseMove"
+    data-action="mousemove@window->sidebar#trackAndOpen"
   >
     <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, class: name %>
