@@ -15,7 +15,7 @@ export default class extends Controller {
   trackAndOpen(event) {
     if (window.innerWidth < 768) return;
 
-    if (event.clientX <= 50) this.open();
+    if (event.clientX <= 12) this.open();
   }
   scheduleCloseTimer() {
     this.closeTimeout = setTimeout(() => {
