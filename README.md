@@ -55,3 +55,6 @@ On Apple Silicon, uncheck "Use Rosetta for x86_64/amd64 emulation for Apple Sili
   - [] Add hint on the left edge to direct user to move mouse over.
   - [] add mobile toggle button + click-to-open;
   - [] disable hover hotzone on touch.
+- [] Fix code block markdown overflowing horizontally in mobile view.
+  - [] Fix white gap when scroll to the bottom of the page in mobile view
+- [] Center Post index content
