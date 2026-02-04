@@ -4,10 +4,9 @@ import { Controller } from "@hotwired/stimulus";
 export default class extends Controller {
   static targets = ["sidebar", "hint"];
   connect() {
-    if (window.innerWidth >= 768) {
-      this.sidebarTarget.style.transform = "translateX(-100%)";
-      this.sidebarTarget.classList.add("fixed", "z-50", "h-screen");
-    }
+    this.sidebarTarget.style.transform = "translateX(-100%)";
+    this.sidebarTarget.classList.add("fixed", "z-50", "h-screen");
+
     this.closeTimeout = null;
     this.isOpen = false;
 
@@ -17,7 +16,7 @@ export default class extends Controller {
     this.isSwiping = false;
 
     this.boundHandleTouchMove = this.handleTouchMove.bind(this);
-    addEventListener("touchmove", this.boundHandleTouchMove, {
+    window.addEventListener("touchmove", this.boundHandleTouchMove, {
       passive: false,
     });
   }
@@ -27,8 +26,6 @@ export default class extends Controller {
 
     this.touchStartX = event.touches[0].clientX;
     this.touchStartY = event.touches[0].clientY;
-    console.log("Touch starts at X:", this.touchStartX);
-    console.log("Touch starts at Y:", this.touchStartY);
     this.isSwiping = false;
   }
 
@@ -41,8 +38,10 @@ export default class extends Controller {
 
     if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 20) {
       this.isSwiping = true;
-      console.log("It's a swipe!!", this.isSwiping);
-      event.preventDefault();
+      // When scrolling is in progress, the event becomes uncancelable. Trying to preventDeafult for this uncancelable event causes errors.
+      if (event.cancelable) {
+        event.preventDefault();
+      }
     }
   }
 
@@ -51,13 +50,11 @@ export default class extends Controller {
     if (!this.isSwiping) return;
 
     const final_deltaX = this.touchCurrentX - this.touchStartX;
-    const isSwipingFromRightEdge = this.touchStartX >= window.innerWidth - 20;
-
-    console.log("final_deltaX:", final_deltaX);
+    const isSwipingFromRightEdge = this.touchStartX >= window.innerWidth - 150;
 
     if (final_deltaX < -50 && isSwipingFromRightEdge && !this.isOpen)
       this.open();
-    if (final_deltaX > 50) this.close();
+    if (final_deltaX > 50 && this.isOpen) this.close();
 
     this.isSwiping = false;
   }
@@ -68,6 +65,7 @@ export default class extends Controller {
     if (event.clientX <= 12) this.open();
   }
   scheduleCloseTimer() {
+    if (window.innerWidth < 768) return;
     this.closeTimeout = setTimeout(() => {
       this.close();
     }, 500);
@@ -97,7 +95,7 @@ export default class extends Controller {
 
   disconnect() {
     this.cancelCloseTimer();
-    removeEventListener("touchmove", this.boundHandleTouchMove, {
+    window.removeEventListener("touchmove", this.boundHandleTouchMove, {
       passive: false,
     });
   }
