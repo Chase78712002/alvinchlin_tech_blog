@@ -10,6 +10,56 @@ export default class extends Controller {
     }
     this.closeTimeout = null;
     this.isOpen = false;
+
+    this.touchStartX = 0;
+    this.touchStartY = 0;
+    this.touchCurrentX = 0;
+    this.isSwiping = false;
+
+    this.boundHandleTouchMove = this.handleTouchMove.bind(this);
+    addEventListener("touchmove", this.boundHandleTouchMove, {
+      passive: false,
+    });
+  }
+
+  handleTouchStart(event) {
+    if (window.innerWidth >= 768) return;
+
+    this.touchStartX = event.touches[0].clientX;
+    this.touchStartY = event.touches[0].clientY;
+    console.log("Touch starts at X:", this.touchStartX);
+    console.log("Touch starts at Y:", this.touchStartY);
+    this.isSwiping = false;
+  }
+
+  handleTouchMove(event) {
+    if (window.innerWidth >= 768) return;
+
+    this.touchCurrentX = event.touches[0].clientX;
+    const deltaX = this.touchCurrentX - this.touchStartX;
+    const deltaY = event.touches[0].clientY - this.touchStartY;
+
+    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 20) {
+      this.isSwiping = true;
+      console.log("It's a swipe!!", this.isSwiping);
+      event.preventDefault();
+    }
+  }
+
+  handleTouchEnd() {
+    if (window.innerWidth >= 768) return;
+    if (!this.isSwiping) return;
+
+    const final_deltaX = this.touchCurrentX - this.touchStartX;
+    const isSwipingFromRightEdge = this.touchStartX >= window.innerWidth - 20;
+
+    console.log("final_deltaX:", final_deltaX);
+
+    if (final_deltaX < -50 && isSwipingFromRightEdge && !this.isOpen)
+      this.open();
+    if (final_deltaX > 50) this.close();
+
+    this.isSwiping = false;
   }
 
   trackAndOpen(event) {
@@ -45,7 +95,10 @@ export default class extends Controller {
     this.sidebarTarget.style.transform = "translateX(-100%)";
   }
 
-  disconect() {
+  disconnect() {
     this.cancelCloseTimer();
+    removeEventListener("touchmove", this.boundHandleTouchMove, {
+      passive: false,
+    });
   }
 }

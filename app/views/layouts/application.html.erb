@@ -28,7 +28,11 @@
 
   <body
     data-controller="sidebar"
-    data-action="mousemove@window->sidebar#trackAndOpen"
+    data-action="
+      mousemove@window->sidebar#trackAndOpen
+      touchstart@window->sidebar#handleTouchStart
+      touchend@window->sidebar#handleTouchEnd
+    "
   >
     <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, class: name %>
