@@ -50,11 +50,11 @@ export default class extends Controller {
     if (!this.isSwiping) return;
 
     const final_deltaX = this.touchCurrentX - this.touchStartX;
-    const isSwipingFromRightEdge = this.touchStartX >= window.innerWidth - 150;
+    // const isSwipingFromRightEdge = this.touchStartX >= window.innerWidth - 150;
+    const isSwipingFromLeft = this.touchStartX >= window.innerWidth - 350;
 
-    if (final_deltaX < -50 && isSwipingFromRightEdge && !this.isOpen)
-      this.open();
-    if (final_deltaX > 50 && this.isOpen) this.close();
+    if (final_deltaX > 50 && isSwipingFromLeft && !this.isOpen) this.open();
+    if (final_deltaX < -50 && this.isOpen) this.close();
 
     this.isSwiping = false;
   }
