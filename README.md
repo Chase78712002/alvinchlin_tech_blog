@@ -57,4 +57,5 @@ On Apple Silicon, uncheck "Use Rosetta for x86_64/amd64 emulation for Apple Sili
 - [x] Fix code block markdown overflowing horizontally in mobile view.
   - [x] Fix white gap when scroll to the bottom of the page in mobile view
 - [x] Center Post index content
-- [] Add authentication check to hide the edit buttons if admin not logged in.
+- [x] Polish paragraph width, markdown css, and line heights.
+- [] Change sidebar open/close swiping behavior to improve UX.
