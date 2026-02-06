@@ -59,4 +59,5 @@ On Apple Silicon, uncheck "Use Rosetta for x86_64/amd64 emulation for Apple Sili
 - [x] Center Post index content
 - [x] Polish paragraph width, markdown css, and line heights.
 - [x] Change sidebar open/close swiping behavior to improve UX.
-- [] Improve post's "back to posts" and "edit post" buttons
+- [x] Improve post's "back to posts" and "edit post" buttons
+- [x] Improve "new post" button position in Post Index.
