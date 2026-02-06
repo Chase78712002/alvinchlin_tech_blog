@@ -12,10 +12,24 @@
 
   <div class="width-full flex justify-center">
     <h1 class="font-bold text-4xl mb-2">Posts</h1>
-    <%= link_to "New post",
-    new_post_path,
+    <%= link_to new_post_path,
     class:
-      "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white block font-medium absolute right-10" %>
+      "rounded-full w-10 h-10 flex items-center justify-center z-50 bg-blue-600 hover:bg-blue-500 text-white block font-medium fixed top-2 right-2" do %>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        class="w-8 h-10"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 4.5v15m7.5-7.5h-15"
+        />
+      </svg>
+    <% end %>
   </div>
 
   <div id="posts" class="min-w-full mt-6jdivide-y divide-gray-200 space-y-5">
