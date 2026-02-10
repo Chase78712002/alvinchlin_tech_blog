@@ -62,3 +62,6 @@ On Apple Silicon, uncheck "Use Rosetta for x86_64/amd64 emulation for Apple Sili
 - [x] Improve post's "back to posts" and "edit post" buttons
 - [x] Improve "new post" button position in Post Index.
 - [] Add ability to draft and save the draft without publishing it right away.
+  - [] Handle 'Save draft' and 'Published' button clicks in create and update actions
+  - [] Add strong params for 'published_at'
+  - [] Add 'drafts' action for admin to view the drafts.
