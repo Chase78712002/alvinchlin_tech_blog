@@ -61,3 +61,4 @@ On Apple Silicon, uncheck "Use Rosetta for x86_64/amd64 emulation for Apple Sili
 - [x] Change sidebar open/close swiping behavior to improve UX.
 - [x] Improve post's "back to posts" and "edit post" buttons
 - [x] Improve "new post" button position in Post Index.
+- [] Add ability to draft and save the draft without publishing it right away.
