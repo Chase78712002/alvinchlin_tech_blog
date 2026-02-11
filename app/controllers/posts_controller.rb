@@ -7,6 +7,12 @@ class PostsController < ApplicationController
     @posts = Post.published.order(updated_at: :desc)
   end
 
+  # GET /posts (admins only)
+  def drafts
+    @posts = Post.draft.order(updated_at: :desc)
+  end
+
+
   # GET /posts/1 or /posts/1.json
   def show
   end
