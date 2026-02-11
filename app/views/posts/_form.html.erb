@@ -44,8 +44,18 @@
                   ] %>
   </div>
 
-  <div class="inline">
-    <%= form.submit class:
+  <div class="inline space-y-2 sm:space-x-2">
+    <%= form.button "Publish",
+                type: :submit,
+                name: :publish,
+                value: true,
+                class:
+                  "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-transparent border border-green-400 hover:bg-green-500 text-green-400 hover:text-white inline-block font-medium cursor-pointer" %>
+    <%= form.button "Save Draft",
+                type: :submit,
+                name: :draft,
+                value: true,
+                class:
                   "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
   </div>
 <% end %>
