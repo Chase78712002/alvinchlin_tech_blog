@@ -16,11 +16,31 @@
     <strong>Alvin C.H.L Tech Blog</strong>
   </div>
   <% home_active = current_page?(root_path) %>
-  <% posts_active = request.path.start_with?("/posts") %>
+  <% drafts_active = current_page?("/posts/drafts") %>
+  <% posts_active = request.path.start_with?("/posts") && !drafts_active %>
 
   <nav class="flex flex-col space-y-1 m-4">
     <%= render "shared/nav_link", text: "Home", path: root_path, active: home_active %>
     <%= render "shared/nav_link", text: "Posts", path: posts_path, active: posts_active %>
+
+    <% if admin_authenticated? %>
+      <%= render "shared/nav_link",
+      text: "Drafts",
+      path: drafts_posts_path,
+      active: drafts_active %>
+    <% end %>
     <%# Later options %>
   </nav>
+  <% if admin_authenticated? %>
+    <%= button_to "Log Out",
+    logout_path,
+    method: :delete,
+    class:
+      "m-2 p-2 absolute bottom-4 border rounded-md border-amber-500 hover:bg-amber-500 text-white" %>
+  <% else %>
+    <%= link_to "Log In",
+    login_path,
+    class:
+      "m-2 p-2 absolute bottom-4 border rounded-md border-green-500 hover:bg-green-500 text-white" %>
+  <% end %>
 </aside>
