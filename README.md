@@ -68,8 +68,9 @@ On Apple Silicon, uncheck "Use Rosetta for x86_64/amd64 emulation for Apple Sili
 - [] Add session-based authentication.
   - [x] Generate sessions controller scaffold.
   - [x] Hook up routes for the login and logout
-  - [] Update ApplicationController
-  - [] Create login form
+  - [x] Update ApplicationController
+  - [x] Create login form
+  - [] Add logic to SessionsController.
   - [] Add logout link
 - [] Hide drafts entirely so non-admins can't view the draft via `posts/1`.
 - [] Add navigation to Drafts page.
