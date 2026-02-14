@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
 
   def destroy
     reset_session
-    redirect_to root_path, flash: "You Logged Out Successfully!"
+    redirect_to root_path, notice: "You Logged Out Successfully!"
   end
 
   private
@@ -22,6 +22,8 @@ class SessionsController < ApplicationController
     username = params[:username]
     password = params[:password]
 
-    false if username.blank? || password.blank?
+    return false if username.blank? || password.blank?
+    ActiveSupport::SecurityUtils.secure_compare(username, Rails.application.credentials.admin_user) &
+    ActiveSupport::SecurityUtils.secure_compare(password, Rails.application.credentials.admin_password)
   end
 end
