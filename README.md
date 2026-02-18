@@ -65,13 +65,14 @@ On Apple Silicon, uncheck "Use Rosetta for x86_64/amd64 emulation for Apple Sili
   - [x] Handle 'Save draft' and 'Published' button clicks in create and update actions
   - [x] Add strong params for 'published_at'
   - [x] Add 'drafts' action for admin to view the drafts.
-- [] Add session-based authentication.
+- [x] Add session-based authentication.
   - [x] Generate sessions controller scaffold.
   - [x] Hook up routes for the login and logout
   - [x] Update ApplicationController
   - [x] Create login form
   - [x] Add logic to SessionsController.
   - [x] Polish the login form
-  - [] Add logout link
-- [] Hide drafts entirely so non-admins can't view the draft via `posts/1`.
-- [] Add navigation to Drafts page.
+  - [x] Add logout link
+- [x] Hide drafts entirely so non-admins can't view the draft via `posts/1`.
+- [x] Add navigation to Drafts page.
+- [] Add draft badge near the title of the post.
