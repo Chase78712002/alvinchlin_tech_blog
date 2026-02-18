@@ -61,7 +61,7 @@ On Apple Silicon, uncheck "Use Rosetta for x86_64/amd64 emulation for Apple Sili
 - [x] Change sidebar open/close swiping behavior to improve UX.
 - [x] Improve post's "back to posts" and "edit post" buttons
 - [x] Improve "new post" button position in Post Index.
-- [] Add ability to draft and save the draft without publishing it right away.
+- [x] Add ability to draft and save the draft without publishing it right away.
   - [x] Handle 'Save draft' and 'Published' button clicks in create and update actions
   - [x] Add strong params for 'published_at'
   - [x] Add 'drafts' action for admin to view the drafts.
@@ -75,4 +75,5 @@ On Apple Silicon, uncheck "Use Rosetta for x86_64/amd64 emulation for Apple Sili
   - [x] Add logout link
 - [x] Hide drafts entirely so non-admins can't view the draft via `posts/1`.
 - [x] Add navigation to Drafts page.
-- [] Add draft badge near the title of the post.
+- [x] Add draft badge near the title of the post.
+  - [x] Also in the post list item container instead of the date.
