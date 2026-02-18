@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :require_admin!, except: [ :index, :show ]
   before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :require_admin_for_draft, only: :show
 
   # GET /posts or /posts.json
   def index
@@ -85,4 +86,8 @@ class PostsController < ApplicationController
         @post.published_at = nil
       end
     end
+
+  def require_admin_for_draft
+    require_admin! if @post.published_at.nil?
+  end
 end
