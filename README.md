@@ -77,4 +77,4 @@ On Apple Silicon, uncheck "Use Rosetta for x86_64/amd64 emulation for Apple Sili
 - [x] Add navigation to Drafts page.
 - [x] Add draft badge near the title of the post.
   - [x] Also in the post list item container instead of the date.
-- [] Fix mobile browser address bar pushing sidebar view height that cut out element in the bottom of the sidebar.
+- [x] Fix mobile browser address bar pushing sidebar view height that cut out element in the bottom of the sidebar.
