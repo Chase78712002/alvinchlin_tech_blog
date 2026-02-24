@@ -5,7 +5,7 @@ export default class extends Controller {
   static targets = ["sidebar", "hint"];
   connect() {
     this.sidebarTarget.style.transform = "translateX(-100%)";
-    this.sidebarTarget.classList.add("fixed", "z-50", "top-0", "h-dvh");
+    this.sidebarTarget.classList.add("fixed", "z-50", "top-0");
 
     this.closeTimeout = null;
     this.isOpen = false;
@@ -16,17 +16,17 @@ export default class extends Controller {
     this.isSwiping = false;
 
     this.boundHandleTouchMove = this.handleTouchMove.bind(this);
-    // this.boundUpdateHeight = this.updateHeight.bind(this);
-    // this.updateHeight();
-    // window.visualViewport?.addEventListener("resize", this.boundUpdateHeight);
+    this.boundUpdateHeight = this.updateHeight.bind(this);
+    this.updateHeight();
+    window.visualViewport?.addEventListener("resize", this.boundUpdateHeight);
     window.addEventListener("touchmove", this.boundHandleTouchMove, {
       passive: false,
     });
   }
 
-  // updateHeight() {
-  //   this.sidebarTarget.style.height = `${window.visualViewport?.height ?? window.innerHeight}px`;
-  // }
+  updateHeight() {
+    this.sidebarTarget.style.height = `${window.visualViewport?.height ?? window.innerHeight}px`;
+  }
 
   handleTouchStart(event) {
     if (window.innerWidth >= 768) return;
@@ -93,7 +93,6 @@ export default class extends Controller {
     if (this.isOpen) return;
     this.isOpen = true;
     this.sidebarTarget.style.transform = "translateX(0)";
-    this.sidebarTarget.style.height = "100dvh";
   }
 
   close() {
@@ -106,9 +105,9 @@ export default class extends Controller {
     window.removeEventListener("touchmove", this.boundHandleTouchMove, {
       passive: false,
     });
-    // window.visualViewport?.removeEventListener(
-    //   "resize",
-    //   this.boundUpdateHeight,
-    // );
+    window.visualViewport?.removeEventListener(
+      "resize",
+      this.boundUpdateHeight,
+    );
   }
 }
